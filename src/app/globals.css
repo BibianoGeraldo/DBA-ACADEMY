@@ -1360,8 +1360,8 @@ footer::before {
 .nav-waffle-btn {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
-  background: transparent;
-  border: none;
+  background: #e8e8e8;
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 50%;
   color: #4a4a4a;
   cursor: pointer;
@@ -1369,7 +1369,7 @@ footer::before {
 }
 .nav-waffle-btn:hover,
 .nav-waffle-btn.active {
-  background: rgba(0,0,0,0.08);
+  background: #dedede;
   color: var(--black);
 }
 
