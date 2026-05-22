@@ -1,25 +1,17 @@
 'use client';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTypewriter } from '@/hooks/useTypewriter';
 import TextAnimation from '@/components/ui/scroll-text';
 
 export function Hero() {
   const word = useTypewriter();
-  const [showVideo, setShowVideo] = useState(false);
-
-  useEffect(() => {
-    setShowVideo(window.matchMedia('(hover: hover) and (pointer: fine)').matches);
-  }, []);
 
   return (
     <section className="hero">
       <div className="hero-scaler">
-        {showVideo && (
-          <video className="hero-video" autoPlay muted loop playsInline preload="none">
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-        )}
+        <video className="hero-video" autoPlay muted loop playsInline>
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="hero-overlay" />
 
         <div className="hero-content">

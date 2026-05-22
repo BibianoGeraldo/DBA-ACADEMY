@@ -8,58 +8,8 @@ function easeInOut(t: number) {
 const TRANSLATE_MAX = 60;
 const SCALE_MAX    = 0.038;
 
-function setupCounters() {
-  const counterEls = Array.from(document.querySelectorAll<HTMLElement>('[data-counter]'));
-  if (!counterEls.length) return;
-
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el      = entry.target as HTMLElement;
-        const target  = parseInt(el.dataset.counter || '0', 10);
-        const suffix  = el.dataset.suffix || '';
-        const colored = el.dataset.colored === '1';
-        const t0      = performance.now();
-
-        function tick(now: number) {
-          const p    = Math.min((now - t0) / 1800, 1);
-          const ease = 1 - Math.pow(1 - p, 3);
-          const val  = Math.round(ease * target);
-          if (colored) {
-            el.innerHTML = `${val}<em style="font-style:normal;color:var(--green)">${suffix}</em>`;
-          } else {
-            el.textContent = val + suffix;
-          }
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-        obs.unobserve(el);
-      });
-    },
-    { threshold: 0.65 }
-  );
-  counterEls.forEach((el) => obs.observe(el));
-}
-
 export function useScrollEffects() {
   useEffect(() => {
-    const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    const nav = document.getElementById('main-nav');
-
-    // Counters run on all devices
-    setupCounters();
-
-    if (!isDesktop) {
-      // Mobile: lightweight native scroll — only nav state
-      const onScroll = () => {
-        if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      return () => window.removeEventListener('scroll', onScroll);
-    }
-
-    // ── Desktop only: Lenis + all effects ──
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let lenisInstance: any = null;
     let rafId: number;
@@ -77,9 +27,12 @@ export function useScrollEffects() {
       });
 
       lenisInstance = lenis;
+      // Expose globally so Header / Providers can call scrollTo(0)
       (window as unknown as Record<string, unknown>).__lenis__ = lenis;
 
-      /* ── Stack push pairs ── */
+      const nav = document.getElementById('main-nav');
+
+      /* ── Stack push pairs (section A scales as section B arrives) ── */
       const stackPairs: [HTMLElement, HTMLElement][] = (
         [
           ['.hero-scaler',     '.section-manifesto'],
@@ -105,7 +58,7 @@ export function useScrollEffects() {
         });
       }
 
-      /* ── Parallax elements ── */
+      /* ── Parallax elements  [data-parallax="speed"] ── */
       const parallaxEls = Array.from(document.querySelectorAll<HTMLElement>('[data-parallax]'));
 
       function updateParallax() {
@@ -119,11 +72,12 @@ export function useScrollEffects() {
         });
       }
 
-      /* ── 3D mouse-tilt ── */
+      /* ── 3D mouse-tilt  [data-tilt="maxDeg"] ── */
       const tiltEls = Array.from(document.querySelectorAll<HTMLElement>('[data-tilt]'));
 
       function setupTilt(el: HTMLElement) {
         const max = parseFloat(el.dataset.tilt || '8');
+
         el.addEventListener('mousemove', (e) => {
           const rect = el.getBoundingClientRect();
           const x = (e.clientX - rect.left)  / rect.width  - 0.5;
@@ -133,6 +87,7 @@ export function useScrollEffects() {
             `perspective(900px) rotateY(${(x * max * 2).toFixed(2)}deg) ` +
             `rotateX(${(-y * max).toFixed(2)}deg) translateZ(10px)`;
         });
+
         el.addEventListener('mouseleave', () => {
           el.classList.add('tilt-reset');
           el.style.transform = '';
@@ -142,7 +97,42 @@ export function useScrollEffects() {
 
       tiltEls.forEach(setupTilt);
 
-      /* ── Manifesto word-by-word reveal ── */
+      /* ── Counter animation  [data-counter="N"] [data-suffix="x"] [data-colored] ── */
+      const counterEls = Array.from(document.querySelectorAll<HTMLElement>('[data-counter]'));
+
+      if (counterEls.length) {
+        const counterObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el       = entry.target as HTMLElement;
+              const target   = parseInt(el.dataset.counter  || '0', 10);
+              const suffix   = el.dataset.suffix  || '';
+              const colored  = el.dataset.colored === '1';
+              const duration = 1800;
+              const t0       = performance.now();
+
+              function tick(now: number) {
+                const p    = Math.min((now - t0) / duration, 1);
+                const ease = 1 - Math.pow(1 - p, 3);
+                const val  = Math.round(ease * target);
+                if (colored) {
+                  el.innerHTML = `${val}<em style="font-style:normal;color:var(--green)">${suffix}</em>`;
+                } else {
+                  el.textContent = val + suffix;
+                }
+                if (p < 1) requestAnimationFrame(tick);
+              }
+              requestAnimationFrame(tick);
+              counterObs.unobserve(el);
+            });
+          },
+          { threshold: 0.65 }
+        );
+        counterEls.forEach((el) => counterObs.observe(el));
+      }
+
+      /* ── Manifesto word-by-word reveal driven by scroll progress ── */
       const manifestoSection = document.querySelector<HTMLElement>('.manifesto');
       const mWords           = Array.from(document.querySelectorAll<HTMLElement>('.mw'));
 
@@ -155,8 +145,10 @@ export function useScrollEffects() {
         mWords.forEach((w, i) => w.classList.toggle('mw-lit', i < toReveal));
       }
 
-      /* ── Snap-to-slot ── */
-      const stickySlots = Array.from(document.querySelectorAll<HTMLElement>('.prog-slot-sticky'));
+      /* ── Snap-to-slot (prog sticky cards) ── */
+      const stickySlots = Array.from(document.querySelectorAll<HTMLElement>(
+        '.prog-slot-sticky'
+      ));
       let snapTimer: ReturnType<typeof setTimeout> | null = null;
       let isSnapping = false;
 
@@ -187,6 +179,7 @@ export function useScrollEffects() {
         }, 220);
       });
 
+      /* also run parallax once on load so initial position is correct */
       updateParallax();
 
       function raf(time: number) {

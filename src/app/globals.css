@@ -3413,13 +3413,6 @@ textarea.ct-input { resize: vertical; min-height: 130px; }
 /* ══════════════════════════════════════════════
    TABLET PORTRAIT — 768px
    ══════════════════════════════════════════════ */
-/* ── Mobile: remove GPU layers not used on touch devices ── */
-@media (hover: none) {
-  .hero-scaler, .programs-scaler, .team-scaler, .manifesto,
-  .section-why, [data-parallax], .section-about,
-  .announcement-ticker { will-change: auto; }
-}
-
 @media (max-width: 768px) {
   /* ── Global typography ── */
   .s-title { font-size: clamp(1.6rem, 4.5vw, 2.25rem); }
