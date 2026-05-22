@@ -1341,6 +1341,54 @@ footer::before {
   color: var(--white);
 }
 
+/* ── Programs filter tabs ── */
+.prog-filter-section {
+  padding: 2.5rem 0 0;
+}
+.prog-filter-tabs {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.prog-filter-btn {
+  padding: 0.45rem 1.2rem !important;
+  border-radius: 9999px !important;
+  border: 1.5px solid #e8e8e8 !important;
+  background: #ffffff !important;
+  color: #777777 !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+  line-height: 1.5 !important;
+  white-space: nowrap;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+.prog-filter-btn:hover {
+  border-color: #0165dd !important;
+  color: #0165dd !important;
+}
+.prog-filter-btn.active {
+  background: #0165dd !important;
+  border-color: #0165dd !important;
+  color: #ffffff !important;
+}
+.prog-filter-empty {
+  padding: 3rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.prog-filter-empty-link {
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
 /* ── Waffle / ecosystem launcher ── */
 .nav-waffle-wrap {
   position: relative;
@@ -3365,6 +3413,13 @@ textarea.ct-input { resize: vertical; min-height: 130px; }
 /* ══════════════════════════════════════════════
    TABLET PORTRAIT — 768px
    ══════════════════════════════════════════════ */
+/* ── Mobile: remove GPU layers not used on touch devices ── */
+@media (hover: none) {
+  .hero-scaler, .programs-scaler, .team-scaler, .manifesto,
+  .section-why, [data-parallax], .section-about,
+  .announcement-ticker { will-change: auto; }
+}
+
 @media (max-width: 768px) {
   /* ── Global typography ── */
   .s-title { font-size: clamp(1.6rem, 4.5vw, 2.25rem); }

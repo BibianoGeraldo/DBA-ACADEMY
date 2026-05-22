@@ -2,6 +2,8 @@ export interface UpcomingSession {
   id: string;
   programTitle: string;
   category: string;
+  /** 0 = Career Starter · 1 = Professional Continuous · 2 = Executive Briefings */
+  programId: 0 | 1 | 2;
   dateStart: string;
   dateEnd: string;
   dateDisplay: string;
@@ -41,6 +43,7 @@ export const upcomingSessions: UpcomingSession[] = [
     id: 'contabilidade-geral-jul25',
     programTitle: 'Contabilidade Geral & PGC-NIRF',
     category: 'Contabilidade',
+    programId: 0,
     dateStart: '2025-07-05',
     dateEnd: '2025-10-04',
     dateDisplay: '05 Jul — 04 Out 2025',
@@ -109,6 +112,7 @@ export const upcomingSessions: UpcomingSession[] = [
     id: 'fiscalidade-ago25',
     programTitle: 'Fiscalidade Moçambicana',
     category: 'Fiscalidade',
+    programId: 1,
     dateStart: '2025-08-02',
     dateEnd: '2025-10-04',
     dateDisplay: '02 Ago — 04 Out 2025',
@@ -177,6 +181,7 @@ export const upcomingSessions: UpcomingSession[] = [
     id: 'gestao-financeira-set25',
     programTitle: 'Gestão Financeira & Tesouraria',
     category: 'Finanças',
+    programId: 2,
     dateStart: '2025-09-06',
     dateEnd: '2025-10-18',
     dateDisplay: '06 Set — 18 Out 2025',

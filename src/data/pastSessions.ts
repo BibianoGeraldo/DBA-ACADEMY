@@ -2,6 +2,8 @@ export interface PastSession {
   id: string;
   programTitle: string;
   category: string;
+  /** 0 = Career Starter · 1 = Professional Continuous · 2 = Executive Briefings */
+  programId: 0 | 1 | 2;
   dateDisplay: string;
   location: string;
   studentsCount: number;
@@ -25,6 +27,7 @@ export const pastSessions: PastSession[] = [
     id: 'contabilidade-geral-jan25',
     programTitle: 'Contabilidade Geral & PGC-NIRF',
     category: 'Contabilidade',
+    programId: 0,
     dateDisplay: 'Jan — Abr 2025',
     location: 'Maputo',
     studentsCount: 18,
@@ -53,6 +56,7 @@ export const pastSessions: PastSession[] = [
     id: 'fiscalidade-fev25',
     programTitle: 'Fiscalidade Moçambicana',
     category: 'Fiscalidade',
+    programId: 1,
     dateDisplay: 'Fev — Mar 2025',
     location: 'Maputo',
     studentsCount: 22,
@@ -76,6 +80,7 @@ export const pastSessions: PastSession[] = [
     id: 'gestao-financeira-out24',
     programTitle: 'Gestão Financeira & Tesouraria',
     category: 'Finanças',
+    programId: 2,
     dateDisplay: 'Out — Nov 2024',
     location: 'Online',
     studentsCount: 20,
@@ -104,6 +109,7 @@ export const pastSessions: PastSession[] = [
     id: 'auditoria-set24',
     programTitle: 'Auditoria & Controlo Interno',
     category: 'Auditoria',
+    programId: 1,
     dateDisplay: 'Set — Out 2024',
     location: 'Maputo',
     studentsCount: 12,
@@ -127,6 +133,7 @@ export const pastSessions: PastSession[] = [
     id: 'excel-ago24',
     programTitle: 'Excel Avançado para Contabilidade',
     category: 'Ferramentas',
+    programId: 0,
     dateDisplay: 'Ago — Set 2024',
     location: 'Online',
     studentsCount: 28,
@@ -150,6 +157,7 @@ export const pastSessions: PastSession[] = [
     id: 'contabilidade-geral-mai24',
     programTitle: 'Contabilidade Geral & PGC-NIRF',
     category: 'Contabilidade',
+    programId: 0,
     dateDisplay: 'Mai — Ago 2024',
     location: 'Maputo',
     studentsCount: 16,

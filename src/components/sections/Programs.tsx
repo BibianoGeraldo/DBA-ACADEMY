@@ -41,6 +41,9 @@ export function Programs() {
                     </div>
                   ))}
                 </div>
+                <Link href={`/programas?prog=${prog.id}`} className="prog-hcard-btn" style={{ marginTop: '1rem', display: 'inline-flex' }}>
+                  Saber Mais →
+                </Link>
               </div>
             </div>
           ))}
@@ -121,7 +124,7 @@ export function Programs() {
                       </div>
                     ))}
                   </div>
-                  <Link href="/programas" className="prog-hcard-btn">
+                  <Link href={`/programas?prog=${prog.id}`} className="prog-hcard-btn">
                     Saber Mais →
                   </Link>
                 </div>
