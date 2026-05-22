@@ -169,16 +169,16 @@ export function Header() {
             aria-label="Ecossistema DBA"
             aria-expanded={waffleOpen}
           >
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden>
-              <circle cx="2.5"  cy="2.5"  r="1.8"/>
-              <circle cx="9"    cy="2.5"  r="1.8"/>
-              <circle cx="15.5" cy="2.5"  r="1.8"/>
-              <circle cx="2.5"  cy="9"    r="1.8"/>
-              <circle cx="9"    cy="9"    r="1.8"/>
-              <circle cx="15.5" cy="9"    r="1.8"/>
-              <circle cx="2.5"  cy="15.5" r="1.8"/>
-              <circle cx="9"    cy="15.5" r="1.8"/>
-              <circle cx="15.5" cy="15.5" r="1.8"/>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden>
+              <circle cx="2"  cy="2"  r="1.4"/>
+              <circle cx="7"  cy="2"  r="1.4"/>
+              <circle cx="12" cy="2"  r="1.4"/>
+              <circle cx="2"  cy="7"  r="1.4"/>
+              <circle cx="7"  cy="7"  r="1.4"/>
+              <circle cx="12" cy="7"  r="1.4"/>
+              <circle cx="2"  cy="12" r="1.4"/>
+              <circle cx="7"  cy="12" r="1.4"/>
+              <circle cx="12" cy="12" r="1.4"/>
             </svg>
           </button>
 

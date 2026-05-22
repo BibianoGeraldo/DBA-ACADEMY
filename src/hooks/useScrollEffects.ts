@@ -28,7 +28,7 @@ export function useScrollEffects() {
 
       lenisInstance = lenis;
       // Expose globally so Header / Providers can call scrollTo(0)
-      (window as Record<string, unknown>).__lenis__ = lenis;
+      (window as unknown as Record<string, unknown>).__lenis__ = lenis;
 
       const nav = document.getElementById('main-nav');
 
@@ -197,7 +197,7 @@ export function useScrollEffects() {
     return () => {
       cancelAnimationFrame(rafId);
       lenisInstance?.destroy();
-      delete (window as Record<string, unknown>).__lenis__;
+      delete (window as unknown as Record<string, unknown>).__lenis__;
       cleanup?.();
     };
   }, []);
