@@ -7,26 +7,26 @@ export interface WhyItem {
 export const whyItems: WhyItem[] = [
   {
     iconId: 'instructors',
-    title: 'Instrutores da indústria',
+    title: 'Rigor técnico sem excepção',
     description:
-      'Todos os nossos formadores têm experiência real no mercado de trabalho. Aprendes com quem vive o que ensina.',
+      'Os nossos formadores são contabilistas, fiscalistas e gestores em actividade — não académicos afastados da prática. Ensinam o que vivem, com a exigência do mercado real.',
   },
   {
     iconId: 'projects',
-    title: 'Aprendizagem baseada em projectos',
+    title: 'Aplicação imediata no trabalho',
     description:
-      'Cada módulo termina com um projecto real que podes incluir no teu portfólio profissional.',
+      'Cada sessão parte de casos reais, legislação actual e cenários do mercado moçambicano. O conhecimento aplica-se no dia seguinte — é essa a nossa medida de sucesso.',
   },
   {
     iconId: 'support',
-    title: 'Suporte pós-formação',
+    title: 'Um programa para cada etapa',
     description:
-      'A tua jornada não termina com o certificado. Tens acesso permanente à nossa comunidade e rede de alumni.',
+      'Da entrada no mercado aos executivos, a dBA Academy adapta o formato, a profundidade e a cadência — sem comprometer o rigor. Career Starter, Professional Continuous ou Executive Briefings.',
   },
   {
     iconId: 'certificate',
-    title: 'Certificação reconhecida',
+    title: 'Credibilidade institucional',
     description:
-      'Os nossos certificados são reconhecidos por empresas parceiras e instituições da área de tecnologia.',
+      'A dBA Academy é um activo da dBA — uma das referências do sector em Moçambique. A certificação que emitimos reflecte essa credibilidade e é reconhecida no mercado.',
   },
 ];

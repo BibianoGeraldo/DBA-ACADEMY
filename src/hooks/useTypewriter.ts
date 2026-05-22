@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-const WORDS = ['Aprender.', 'Crescer.', 'Transformar-te.', 'Evoluir.', 'Inovar.', 'Construir.'];
+const WORDS = ['Contabilidade.', 'Fiscalidade.', 'Finanças.'];
 
 export function useTypewriter() {
   const [text, setText] = useState('');
