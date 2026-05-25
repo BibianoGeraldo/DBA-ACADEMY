@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const session = upcomingSessions.find((s) => s.id === id);
   if (!session) return {};
   return {
-    title: `${session.programTitle} — DBA Academy`,
+    title: `${session.programTitle} — dBA Academy`,
     description: session.description,
   };
 }
@@ -185,9 +185,9 @@ export default async function ProgramDetailPage({ params }: Props) {
                   </div>
                 </div>
                 <div className="pd-cert-info">
-                  <div className="pd-cert-title">Certificado DBA Academy</div>
+                  <div className="pd-cert-title">Certificado dBA Academy</div>
                   <p className="pd-cert-desc">
-                    {session.certificateBody ?? 'Todos os participantes que concluírem o programa recebem um certificado digital verificável emitido pela DBA Academy.'}
+                    {session.certificateBody ?? 'Todos os participantes que concluírem o programa recebem um certificado digital verificável emitido pela dBA Academy.'}
                   </p>
                   <div className="pd-cert-features">
                     <span className="pd-cert-feature-tag">✓ Verificação por QR Code</span>

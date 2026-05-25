@@ -4,12 +4,18 @@ import { LogoMark } from '@/components/ui/LogoMark';
 export function Footer() {
   return (
     <footer>
-      <div className="footer-grid">
-        <div className="footer-brand">
+      <div className="footer-simple">
+        <div className="footer-simple-top">
           <Link href="/" className="footer-brand-logo">
             <LogoMark variant="light" />
           </Link>
-          <p>Formação de qualidade em contabilidade, fiscalidade e finanças, pensada para o mercado moçambicano.</p>
+
+          <nav className="footer-simple-nav">
+            <Link href="/faq">FAQ</Link>
+            <a href="mailto:info@dbaacademy.co.mz">info@dbaacademy.co.mz</a>
+            <a href="https://dba.co.mz" target="_blank" rel="noopener noreferrer">dBA ↗</a>
+          </nav>
+
           <div className="social-row">
             <a href="https://www.instagram.com/dbaacademy" className="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -28,54 +34,11 @@ export function Footer() {
             </a>
           </div>
         </div>
-
-        <FooterCol title="Academia" links={[
-          { label: 'Quem Somos', href: '/quem-somos' },
-          { label: 'Blog', href: '/blog' },
-          { label: 'FAQ', href: '/faq' },
-          { label: 'Contacto', href: '/contacto' },
-        ]} />
-
-        <FooterCol title="Programas" links={[
-          { label: 'Contabilidade Geral & PGC', href: '/programas' },
-          { label: 'Fiscalidade Moçambicana', href: '/programas' },
-          { label: 'Gestão Financeira', href: '/programas' },
-          { label: 'Auditoria & Controlo Interno', href: '/programas' },
-          { label: 'Excel para Contabilidade', href: '/programas' },
-        ]} />
-
-        <FooterCol title="Contacto" links={[
-          { label: 'info@dbaacademy.co.mz', href: 'mailto:info@dbaacademy.co.mz' },
-          { label: '+258 84 000 0000', href: 'tel:+258840000000' },
-          { label: 'Rua dos Desportistas, n.º 833', href: '#' },
-          { label: 'JAT 5-1, 9.º Andar · Maputo', href: '#' },
-        ]} />
       </div>
 
       <div className="footer-bottom">
-        <span>© 2025 DBA Academy. Todos os direitos reservados.</span>
-        <span>Feito com cuidado em <span className="footer-green">Moçambique</span></span>
+        <span>© 2026 dBA Academy. Todos os direitos reservados.</span>
       </div>
     </footer>
-  );
-}
-
-interface FooterColProps {
-  title: string;
-  links: Array<{ label: string; href: string }>;
-}
-
-function FooterCol({ title, links }: FooterColProps) {
-  return (
-    <div className="f-col">
-      <h5>{title}</h5>
-      <ul>
-        {links.map((link) => (
-          <li key={link.label}>
-            <Link href={link.href}>{link.label}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

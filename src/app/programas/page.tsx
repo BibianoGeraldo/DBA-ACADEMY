@@ -4,7 +4,7 @@ import TextAnimation from '@/components/ui/scroll-text';
 import { ProgramasClient } from '@/components/ProgramasClient';
 
 export const metadata: Metadata = {
-  title: 'Programas — DBA Academy',
+  title: 'Programas — dBA Academy',
   description:
     'Próximas sessões em Contabilidade, Fiscalidade, Gestão Financeira e Auditoria. Consulte datas, preços em MT e mentores especializados.',
 };

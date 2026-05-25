@@ -5,9 +5,9 @@ import { team } from '@/data/team';
 import TextAnimation from '@/components/ui/scroll-text';
 
 export const metadata: Metadata = {
-  title: 'Quem Somos — DBA Academy',
+  title: 'Quem Somos — dBA Academy',
   description:
-    'Conheça a equipa por trás da DBA Academy: a nossa missão, visão, valores e as pessoas que tornam a formação possível.',
+    'Conheça a equipa por trás da dBA Academy: a nossa missão, visão, valores e as pessoas que tornam a formação possível.',
 };
 
 const VALUES = [
@@ -30,7 +30,7 @@ const VALUES = [
 ];
 
 const MILESTONES = [
-  { year: '2021', label: 'Fundação', desc: 'A DBA Academy nasce em Maputo com o primeiro programa de Contabilidade Geral & PGC.' },
+  { year: '2021', label: 'Fundação', desc: 'A dBA Academy nasce em Maputo com o primeiro programa de Contabilidade Geral & PGC.' },
   { year: '2022', label: 'Crescimento', desc: 'Lançamento dos programas de Fiscalidade Moçambicana e Excel para Contabilidade. Primeiros 100 alumni.' },
   { year: '2023', label: 'Expansão', desc: 'Novos programas de Gestão Financeira e Auditoria. Primeiras parcerias com empresas do sector privado.' },
   { year: '2024', label: 'Online', desc: 'Modalidade online lançada. Formandos de 5 províncias moçambicanas a frequentar sessões em simultâneo.' },
@@ -54,7 +54,7 @@ export default function QuemSomosPage() {
           />
           <TextAnimation
             as="p"
-            text="A DBA Academy é uma instituição moçambicana de formação especializada em contabilidade, fiscalidade e finanças. Acreditamos que a formação de qualidade é o alicerce de qualquer organização sólida — e que o acesso a ela deve ser amplo, prático e relevante para o mercado."
+            text="A dBA Academy é uma instituição moçambicana de formação especializada em contabilidade, fiscalidade e finanças. Acreditamos que a formação de qualidade é o alicerce de qualquer organização sólida — e que o acesso a ela deve ser amplo, prático e relevante para o mercado."
             classname="page-hero-lead"
             lineAnime
             stagger={0.16}
@@ -186,7 +186,7 @@ export default function QuemSomosPage() {
               <TextAnimation as="h2" text="Invista no seu desenvolvimento profissional" direction="up" stagger={0.07} />
               <TextAnimation
                 as="p"
-                text="Junte-se aos mais de 400 alumni que já elevaram o seu nível profissional com a DBA Academy. O próximo passo começa aqui."
+                text="Junte-se aos mais de 400 alumni que já elevaram o seu nível profissional com a dBA Academy. O próximo passo começa aqui."
                 lineAnime
                 stagger={0.18}
                 style={{ display: 'block' }}

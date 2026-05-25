@@ -6,9 +6,9 @@ import { team } from '@/data/team';
 import TextAnimation from '@/components/ui/scroll-text';
 
 export const metadata: Metadata = {
-  title: 'Blog — DBA Academy',
+  title: 'Blog — dBA Academy',
   description:
-    'Artigos sobre tecnologia, mercado de dados em Moçambique, carreira em tech e casos de uso reais. Da equipa DBA Academy.',
+    'Artigos sobre tecnologia, mercado de dados em Moçambique, carreira em tech e casos de uso reais. Da equipa dBA Academy.',
 };
 
 export default function BlogPage() {
@@ -20,7 +20,7 @@ export default function BlogPage() {
       {/* ── Page Header ── */}
       <section className="page-hero page-hero-sm">
         <div className="page-hero-inner">
-          <TextAnimation as="h1" text="Blog DBA Academy" classname="page-hero-title" direction="up" stagger={0.07} />
+          <TextAnimation as="h1" text="Blog dBA Academy" classname="page-hero-title" direction="up" stagger={0.07} />
           <TextAnimation
             as="p"
             text="Perspectivas da equipa sobre tecnologia, mercado de dados em Moçambique, trajectórias de carreira e histórias reais dos nossos formandos."

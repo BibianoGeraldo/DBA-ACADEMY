@@ -18,14 +18,14 @@ export const faqCategories: FAQCategory[] = [
 export const faqItems: FAQItem[] = [
   {
     id: 'o-que-e-dba',
-    question: 'O que é a DBA Academy?',
+    question: 'O que é a dBA Academy?',
     answer:
-      'A DBA Academy é uma academia de formação especializada em contabilidade, fiscalidade, gestão financeira e auditoria, baseada em Maputo, Moçambique. Oferecemos programas práticos ministrados por profissionais experientes do mercado moçambicano. As nossas turmas são pequenas, intensivas e orientadas para resultados concretos na carreira.',
+      'A dBA Academy é uma academia de formação especializada em contabilidade, fiscalidade, gestão financeira e auditoria, baseada em Maputo, Moçambique. Oferecemos programas práticos ministrados por profissionais experientes do mercado moçambicano. As nossas turmas são pequenas, intensivas e orientadas para resultados concretos na carreira.',
     category: 'Geral',
   },
   {
     id: 'onde-estao',
-    question: 'Onde se localiza a DBA Academy?',
+    question: 'Onde se localiza a dBA Academy?',
     answer:
       'A nossa sede fica na Rua dos Desportistas, n.º 833, JAT 5-1, 9.º Andar, Maputo, Moçambique. Também oferecemos programas 100% online e em formato híbrido, acessíveis a partir de qualquer cidade de Moçambique.',
     category: 'Geral',
@@ -97,7 +97,7 @@ export const faqItems: FAQItem[] = [
     id: 'certificado-incluido',
     question: 'Recebo um certificado no fim?',
     answer:
-      'Sim. Todos os participantes que completarem o programa com aprovação recebem um Certificado de Participação DBA Academy. O certificado é emitido em formato digital (PDF verificável) e pode ser partilhado directamente no LinkedIn.',
+      'Sim. Todos os participantes que completarem o programa com aprovação recebem um Certificado de Participação dBA Academy. O certificado é emitido em formato digital (PDF verificável) e pode ser partilhado directamente no LinkedIn.',
     category: 'Certificado',
   },
   {

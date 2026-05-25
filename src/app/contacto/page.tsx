@@ -3,9 +3,9 @@ import Link from 'next/link';
 import TextAnimation from '@/components/ui/scroll-text';
 
 export const metadata: Metadata = {
-  title: 'Contacto — DBA Academy',
+  title: 'Contacto — dBA Academy',
   description:
-    'Entre em contacto com a DBA Academy. Estamos em Maputo, Moçambique — Rua dos Desportistas, n.º 833, JAT 5-1, 9.º Andar.',
+    'Entre em contacto com a dBA Academy. Estamos em Maputo, Moçambique — Rua dos Desportistas, n.º 833, JAT 5-1, 9.º Andar.',
 };
 
 const CONTACT_CARDS = [
@@ -59,7 +59,7 @@ const SOCIAL = [
   },
   {
     label: 'LinkedIn',
-    handle: 'DBA Academy',
+    handle: 'dBA Academy',
     href: '#',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -69,7 +69,7 @@ const SOCIAL = [
   },
   {
     label: 'Facebook',
-    handle: 'DBA Academy Moçambique',
+    handle: 'dBA Academy Moçambique',
     href: '#',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -94,7 +94,7 @@ const FAQ_QUICK = [
   },
   {
     q: 'Emitem factura?',
-    a: 'Sim. A DBA Academy emite factura para todos os pagamentos efectuados, seja para inscrições individuais ou para empresas que inscrevem colaboradores.',
+    a: 'Sim. A dBA Academy emite factura para todos os pagamentos efectuados, seja para inscrições individuais ou para empresas que inscrevem colaboradores.',
   },
 ];
 

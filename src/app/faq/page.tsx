@@ -4,9 +4,9 @@ import { faqItems } from '@/data/faq';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 
 export const metadata: Metadata = {
-  title: 'FAQ — DBA Academy',
+  title: 'FAQ — dBA Academy',
   description:
-    'Perguntas frequentes sobre a DBA Academy: inscrições, programas, certificados, pagamentos e muito mais.',
+    'Perguntas frequentes sobre a dBA Academy: inscrições, programas, certificados, pagamentos e muito mais.',
 };
 
 export default function FAQPage() {

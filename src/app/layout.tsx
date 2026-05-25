@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'DBA Academy — Educação que Transforma',
+  title: 'dBA Academy — Educação que Transforma',
   description:
-    'A DBA Academy é a referência em formação fiscal, contabilística e financeira em Moçambique. Programas práticos, instrutores experientes e uma comunidade de profissionais.',
+    'A dBA Academy é a referência em formação fiscal, contabilística e financeira em Moçambique. Programas práticos, instrutores experientes e uma comunidade de profissionais.',
 };
 
 export default function RootLayout({

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const session = pastSessions.find((s) => s.id === id);
   if (!session) return {};
   return {
-    title: `${session.programTitle} (${session.dateDisplay}) — DBA Academy`,
+    title: `${session.programTitle} (${session.dateDisplay}) — dBA Academy`,
     description: session.description,
   };
 }

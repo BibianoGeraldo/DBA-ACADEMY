@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} — DBA Academy Blog`,
+    title: `${post.title} — dBA Academy Blog`,
     description: post.excerpt,
   };
 }
@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="post-author-box-name">{post.author}</div>
               <div className="post-author-box-role">{post.authorRole}</div>
               <p className="post-author-box-bio">
-                Membro da equipa DBA Academy, com experiência em formação intensiva
+                Membro da equipa dBA Academy, com experiência em formação intensiva
                 e no mercado de tecnologia moçambicano.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h2>Pronto para dar o próximo passo?</h2>
               <p>
                 Consulte os programas disponíveis e reserve o seu lugar
-                na próxima turma da DBA Academy.
+                na próxima turma da dBA Academy.
               </p>
             </div>
             <Link href="/programas" className="btn-primary">

@@ -45,7 +45,7 @@ export const team: TeamMember[] = [
   {
     name: 'Marlo Boaventura',
     role: 'Director & Especialista Fiscal',
-    bio: 'Fundador e mentor principal da DBA Academy. Especialista fiscal e financeiro com experiência em Portugal e Moçambique, apaixonado por democratizar o acesso à formação de qualidade.',
+    bio: 'Fundador e mentor principal da dBA Academy. Especialista fiscal e financeiro com experiência em Portugal e Moçambique, apaixonado por democratizar o acesso à formação de qualidade.',
     photo: '/Team/marlo-boaventura.png',
     linkedIn: 'https://linkedin.com/in/marlo-boaventura',
   },

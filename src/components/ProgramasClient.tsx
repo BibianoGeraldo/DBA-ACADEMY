@@ -118,7 +118,7 @@ export function ProgramasClient({ initialProg }: Props) {
           <div className="section-inner">
             <div className="section-head">
               <h2 className="s-title">Sessões Anteriores</h2>
-              <p className="section-lead">Mais de 100 formandos já passaram pela DBA Academy. Aqui ficam os registos das nossas sessões.</p>
+              <p className="section-lead">Mais de 100 formandos já passaram pela dBA Academy. Aqui ficam os registos das nossas sessões.</p>
             </div>
             <div className="past-grid">
               {filteredPast.map((session, i) => (

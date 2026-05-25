@@ -10,7 +10,7 @@ const ECOSYSTEM = [
     id: 'cf-fiscal',
     label: 'Consultoria Fiscal',
     href: '#',
-    color: '#0165dd',
+    color: '#0057E7',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
@@ -19,9 +19,9 @@ const ECOSYSTEM = [
   },
   {
     id: 'cf-contab',
-    label: 'Consultoria Fiscal',
+    label: 'Contabilidade',
     href: '#',
-    color: '#059669',
+    color: '#2DBE6C',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
@@ -30,9 +30,9 @@ const ECOSYSTEM = [
   },
   {
     id: 'cf-aval',
-    label: 'Consultoria Fiscal',
+    label: 'Auditoria',
     href: '#',
-    color: '#7c3aed',
+    color: '#00D4E8',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
@@ -43,7 +43,7 @@ const ECOSYSTEM = [
     id: 'rh-1',
     label: 'Recursos Humanos',
     href: '#',
-    color: '#ea580c',
+    color: '#0057E7',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -52,9 +52,9 @@ const ECOSYSTEM = [
   },
   {
     id: 'rh-2',
-    label: 'Recursos Humanos',
+    label: 'Formação',
     href: '#',
-    color: '#be123c',
+    color: '#2DBE6C',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
@@ -63,9 +63,9 @@ const ECOSYSTEM = [
   },
   {
     id: 'tech',
-    label: 'Tecnologia e Automação',
+    label: 'Tecnologia',
     href: '#',
-    color: '#0f4c75',
+    color: '#0A0F1E',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/>
@@ -116,11 +116,8 @@ export function Header() {
 
   const links = [
     { label: 'Início', href: '/' },
-    { label: 'Quem Somos', href: '/quem-somos' },
     { label: 'Programas', href: '/programas' },
-    { label: 'Blog', href: '/blog' },
     { label: 'FAQ', href: '/faq' },
-    { label: 'Contacto', href: '/contacto' },
   ];
 
   return (
@@ -155,6 +152,11 @@ export function Header() {
               </Link>
             </li>
           ))}
+          <li>
+            <a href="https://dba.co.mz" target="_blank" rel="noopener noreferrer">
+              dBA ↗
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -166,7 +168,7 @@ export function Header() {
           <button
             className={`nav-waffle-btn${waffleOpen ? ' active' : ''}`}
             onClick={() => setWaffleOpen((o) => !o)}
-            aria-label="Ecossistema DBA"
+            aria-label="Ecossistema dBA"
             aria-expanded={waffleOpen}
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden>
@@ -183,9 +185,9 @@ export function Header() {
           </button>
 
           {waffleOpen && (
-            <div className="nav-waffle-panel" role="dialog" aria-label="Ecossistema DBA Academy">
+            <div className="nav-waffle-panel" role="dialog" aria-label="Ecossistema dBA">
               <div className="nav-waffle-header">
-                <span className="nav-waffle-title">Ecossistema DBA</span>
+                <span className="nav-waffle-title">Ecossistema dBA</span>
               </div>
               <div className="nav-waffle-grid">
                 {ECOSYSTEM.map((item) => (
@@ -254,6 +256,14 @@ export function Header() {
               {l.label}
             </Link>
           ))}
+          <a
+            href="https://dba.co.mz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-mobile-link"
+          >
+            dBA ↗
+          </a>
           <div className="nav-lang-switch nav-lang-switch-mobile">
             <button
               className={`nav-lang-btn${lang === 'pt' ? ' nav-lang-active' : ''}`}
@@ -268,9 +278,6 @@ export function Header() {
               EN
             </button>
           </div>
-          <Link href="/programas" className="btn-primary nav-mobile-cta">
-            Inscreva-se
-          </Link>
         </div>
       )}
     </nav>

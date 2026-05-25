@@ -8,49 +8,7 @@ export function Programs() {
   return (
     <section className="programs" id="programas">
 
-      {/* ── MOBILE: simple stacked list ── */}
-      <div className="programs-scaler">
-        <div className="programs-head fade-up">
-          <h2 className="s-title">Formação que prepara para o mundo real</h2>
-        </div>
-        <div className="programs-mobile-list">
-          {programs.slice(0, 3).map((prog, i) => (
-            <div key={prog.id} className="prog-mobile-card scale-in" style={{ transitionDelay: `${i * 0.08}s` }}>
-              <div className="prog-mobile-icon" style={{ position: 'relative', overflow: 'hidden' }}>
-                {prog.photo ? (
-                  <Image
-                    src={prog.photo}
-                    alt={prog.category}
-                    fill
-                    sizes="80px"
-                    style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: 'inherit' }}
-                  />
-                ) : (
-                  <ProgramIcon iconId={prog.iconId} />
-                )}
-              </div>
-              <div className="prog-mobile-body">
-                <div className="prog-cat">{prog.category}</div>
-                <h3 className="prog-title">{prog.title}</h3>
-                <p className="prog-desc">{prog.description}</p>
-                <div className="prog-meta">
-                  {prog.meta.map((m) => (
-                    <div key={m.label} className="m-item">
-                      <span className="m-lbl">{m.label}</span>
-                      <span className="m-val">{m.value}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href={`/programas?prog=${prog.id}`} className="prog-hcard-btn" style={{ marginTop: '1rem', display: 'inline-flex' }}>
-                  Saber Mais →
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── DESKTOP: sticky split layout ── */}
+      {/* Sticky split layout — responsive: single col on mobile, side-by-side on desktop */}
       <div className="programs-split">
 
         {/* Left: sticky section info */}

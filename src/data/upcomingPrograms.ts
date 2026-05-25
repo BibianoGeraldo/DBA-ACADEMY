@@ -38,7 +38,11 @@ export interface UpcomingSession {
   badge?: string;
 }
 
-export const upcomingSessions: UpcomingSession[] = [
+// Dates to be confirmed — sessions will be added here when dates are set
+export const upcomingSessions: UpcomingSession[] = [];
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const _archivedSessions: UpcomingSession[] = [
   {
     id: 'contabilidade-geral-jul25',
     programTitle: 'Contabilidade Geral & PGC-NIRF',
@@ -101,7 +105,7 @@ export const upcomingSessions: UpcomingSession[] = [
 
     certificateShareable: true,
     certificateBody:
-      'Ao concluir o programa é emitido um Certificado DBA Academy em formato digital com QR Code de verificação, que pode ser partilhado directamente no LinkedIn e adicionado ao currículo profissional.',
+      'Ao concluir o programa é emitido um Certificado dBA Academy em formato digital com QR Code de verificação, que pode ser partilhado directamente no LinkedIn e adicionado ao currículo profissional.',
 
     iconId: 'analytics',
     featured: true,
@@ -171,7 +175,7 @@ export const upcomingSessions: UpcomingSession[] = [
 
     certificateShareable: true,
     certificateBody:
-      'O Certificado DBA Academy é emitido digitalmente com verificação por QR Code e pode ser partilhado no LinkedIn, onde aparece como credencial na secção de licenças e certificações.',
+      'O Certificado dBA Academy é emitido digitalmente com verificação por QR Code e pode ser partilhado no LinkedIn, onde aparece como credencial na secção de licenças e certificações.',
 
     iconId: 'bi',
     featured: true,
@@ -237,7 +241,7 @@ export const upcomingSessions: UpcomingSession[] = [
 
     certificateShareable: true,
     certificateBody:
-      'Certificado DBA Academy emitido digitalmente com verificação por QR Code. Inclui a lista de competências e horas de formação, pronto para partilhar no LinkedIn.',
+      'Certificado dBA Academy emitido digitalmente com verificação por QR Code. Inclui a lista de competências e horas de formação, pronto para partilhar no LinkedIn.',
 
     iconId: 'web',
   },

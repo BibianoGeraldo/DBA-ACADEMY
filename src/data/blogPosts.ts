@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
       'Um dos pontos de confusão frequente é a classificação de activos fixos tangíveis versus intangíveis. O PGC-NIRF é mais exigente nos critérios de reconhecimento e impõe testes de imparidade que o PGC anterior não previa. A não aplicação destes testes pode inflar o activo e distorcer o resultado.',
       'Outro tema crítico: as locações. A distinção entre locação financeira e locação operacional tem impacto directo no balanço e na demonstração de resultados. Com o PGC-NIRF, o critério económico prevalece sobre a forma jurídica — o que altera significativamente o tratamento de contratos de aluguer de longo prazo.',
       'A preparação das demonstrações financeiras comparativas — exigidas pelo PGC-NIRF — obriga a que o contabilista conheça bem os períodos anteriores e saiba reconstituir saldos de abertura correctamente.',
-      'A DBA Academy inclui no programa de Contabilidade Geral um módulo dedicado à transição para o PGC-NIRF, com casos práticos e formulários actualizados. É a forma mais eficiente de actualizar conhecimentos sem interromper a actividade profissional.',
+      'A dBA Academy inclui no programa de Contabilidade Geral um módulo dedicado à transição para o PGC-NIRF, com casos práticos e formulários actualizados. É a forma mais eficiente de actualizar conhecimentos sem interromper a actividade profissional.',
     ],
     dateDisplay: '24 Abr 2025',
     date: '2025-04-24',

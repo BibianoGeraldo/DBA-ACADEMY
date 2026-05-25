@@ -95,24 +95,62 @@ export default function TextAnimation({
     visible: { transition: { staggerChildren: stagger } },
   };
 
-  /* Split text into tokens */
-  let tokens: string[];
+  const MotionEl = MOTION_MAP[as] as typeof motion.div;
+
+  /* ── Letter-by-letter: group letters inside word wrappers so line
+     breaks only happen between words, never mid-word ── */
   if (letterAnime) {
-    tokens = text.split('');
-  } else if (lineAnime) {
+    const words = text.split(' ');
+    let globalIdx = 0;
+    const wordGroups = words.map((word) => {
+      const letters = word.split('').map((ch) => ({ ch, idx: globalIdx++ }));
+      globalIdx++; // account for the space after the word
+      return letters;
+    });
+
+    return (
+      <MotionEl
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ref={ref as any}
+        className={classname}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        style={{ display: 'flex', flexWrap: 'wrap', columnGap: '0.28em', rowGap: '0.1em', ...style }}
+      >
+        {wordGroups.map((letters, wi) => (
+          <span key={wi} style={{ display: 'inline-flex', whiteSpace: 'nowrap' }}>
+            {letters.map(({ ch, idx }) => (
+              <motion.span
+                key={idx}
+                variants={tokenVariants}
+                transition={{ delay: idx * stagger }}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
+                style={{ display: 'inline-block' }}
+              >
+                {ch}
+              </motion.span>
+            ))}
+          </span>
+        ))}
+      </MotionEl>
+    );
+  }
+
+  /* ── Word or line tokens ── */
+  let tokens: string[];
+  if (lineAnime) {
     tokens = text.match(/[^.!?]+[.!?]*/g)?.map((s) => s.trim()) ?? [text];
   } else {
     tokens = text.split(' ');
   }
-
-  const MotionEl = MOTION_MAP[as] as typeof motion.div;
 
   const containerStyle: React.CSSProperties = lineAnime
     ? { display: 'block', ...style }
     : {
         display: 'flex',
         flexWrap: 'wrap',
-        columnGap: letterAnime ? '0' : '0.35em',
+        columnGap: '0.35em',
         rowGap: '0.1em',
         ...style,
       };
@@ -133,7 +171,7 @@ export default function TextAnimation({
           variants={tokenVariants}
           style={{
             display: lineAnime ? 'block' : 'inline-block',
-            whiteSpace: letterAnime ? 'pre' : 'normal',
+            whiteSpace: 'normal',
           }}
         >
           {token}
